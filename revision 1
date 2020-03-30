@@ -1,0 +1,28 @@
+void schedule(struct children list[80],int a)
+{
+	int i,j;
+	struct children t;
+	for(i=0;i<a;i++)
+	{
+		for(j=0;j<(a-1-i);j++)
+		{
+			if(list[j].time<list[j+1].time)
+			{
+				 t = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = t;
+
+			}
+		else if(list[j].time==list[j+1].time)	
+		{
+			if(list[j].uniqueid>list[j+1].uniqueid)
+			{
+				t = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = t;
+
+			}
+		}
+		}
+	}
+}
